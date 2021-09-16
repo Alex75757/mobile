@@ -28,7 +28,7 @@ for (let element of minusChecked) {
 			element.parentNode.previousElementSibling.style.display="block";
 		} else {
 			test -=1;
-			element.nextElementSibling.innerHTML = test + "шт";
+			element.nextElementSibling.innerHTML = test + " шт";
 		}
 	})
 }
@@ -40,7 +40,7 @@ for (let element of plusChecked) {
 
 		console.log(test);
 			test +=1;
-			element.previousElementSibling.innerHTML = test + "шт";
+			element.previousElementSibling.innerHTML = test + " шт";
 		
 	})
 }
