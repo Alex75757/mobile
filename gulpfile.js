@@ -21,7 +21,7 @@ function cleanDist() {
 }
 
 function images() {
-  return src('app/images/**/*')
+  return src('app/img/**/*')
     .pipe(imagemin(
       [
         imagemin.gifsicle({ interlaced: true }),
@@ -35,7 +35,7 @@ function images() {
         })
       ]
     ))
-    .pipe(dest('dist/images'))
+    .pipe(dest('dist/img'))
 }
 
 function scripts() {

@@ -1,6 +1,7 @@
 $base-color: #FFF;
 $price-discount: #FF0D55;
 $cart-backgroud: #525252;
+$main-font-family: 'Roboto', sans-serif;
 
 .additional-perchase{
     position: relative;
@@ -12,7 +13,8 @@ $cart-backgroud: #525252;
     margin-bottom: 24px;
 
     &__caption{
-        font-family: Roboto;
+        font-family: $main-font-family;
+
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
@@ -38,13 +40,10 @@ $cart-backgroud: #525252;
     align-items: start;
     padding: 0px;
     margin-right: 20px;
+    position: relative;
 
-    width: 305px;
-    height: 416px;
-    left: 975px; 
-
-    &__img{
-        width: 79px;
+     &__img{
+        // width: 79px;
         height: 200px;
         align-items: center;
         object-fit: none;
@@ -53,7 +52,8 @@ $cart-backgroud: #525252;
     &__price{
         
         height: 24px;
-        font-family: Roboto;
+        font-family: $main-font-family;
+
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
@@ -82,11 +82,7 @@ $cart-backgroud: #525252;
         width: 40px;
         left: 1px;
         top: 4.5px;
-        
-        // /* price-discount */
-        
-        // border: 1px solid #FF0D55;
-        // transform: rotate(-13deg);  
+   
     }
     &__price--discount{
         color: $price-discount;
@@ -94,7 +90,8 @@ $cart-backgroud: #525252;
     &__description{
         width: 305px;
         height: 60px;
-        font-family: Roboto;
+        font-family: $main-font-family;
+
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -112,7 +109,8 @@ $cart-backgroud: #525252;
     background: #1A45DB;
     border-radius: 3px;
     align-self: center;
-    font-family: Roboto;
+    font-family: $main-font-family;
+
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -145,7 +143,8 @@ $cart-backgroud: #525252;
     &__text{
         width: 34px;
         height: 20px;
-        font-family: Roboto;
+        font-family: $main-font-family;
+
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -163,11 +162,9 @@ $cart-backgroud: #525252;
 
 
 .heart{
-    position: relative;
-    left: 78.17%;
-// right: 4.17%;
-    top: 8.5%;
-// bottom: 12.5%;
+    position: absolute;
+    right: 4.17%;
+    top: 0.0%;
     stroke:#525252 ;
     stroke-width: 2;
     background-image: url(../img/heart.svg);
