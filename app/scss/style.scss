@@ -132,7 +132,7 @@ $main-font-family: 'Roboto', sans-serif;
         display: inline;
     }
     &__minus{
-        // display: block;
+        object-fit: none;
         width: 44px;
         height: 44px;
         background: #F8F8F8;
@@ -150,6 +150,7 @@ $main-font-family: 'Roboto', sans-serif;
         color: $cart-backgroud;
     }
     &__plus{
+        object-fit: none;
         width: 44px;
         height: 44px;
         background: #F8F8F8;
@@ -172,13 +173,13 @@ $main-font-family: 'Roboto', sans-serif;
 @media (max-width:760px){
     .card-container{
         flex-wrap: wrap;
-        width: 780px;
+        max-width: 780px;
     }
 }
 
 @media (max-width:350px){
     .card-container{
         flex-wrap: wrap;
-        width: 350px;
+        max-width: 350px;
     }
 }
