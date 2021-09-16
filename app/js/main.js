@@ -23,7 +23,7 @@ for (let element of minusChecked) {
 			element.parentNode.previousElementSibling.style.display="block";
 		} else {
 			test -=1;
-			element.nextElementSibling.innerHTML = test + " шт";
+			element.nextElementSibling.innerHTML = test + " m";
 		}
 	})
 }
@@ -33,7 +33,7 @@ for (let element of plusChecked) {
 	element.addEventListener('click', () => {
 		let test = parseInt(element.previousElementSibling.innerHTML.replace('шт',''));
 			test +=1;
-			element.previousElementSibling.innerHTML = test + " шт";
+			element.previousElementSibling.innerHTML = test + " v";
 		
 	})
 }
