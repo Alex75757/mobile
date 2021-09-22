@@ -115,9 +115,10 @@ $main-font-family: 'Roboto', sans-serif;
     line-height: 20px;
     letter-spacing: 0.1px;
     color: #FFFFFF;
-    &--open{
-        display: none;
+    &--active{
+        background: #082ba8;
     }
+    
 }
 .cart{
     width: 156px;
@@ -164,9 +165,14 @@ $main-font-family: 'Roboto', sans-serif;
     top: 0.0%;
     stroke:#525252 ;
     stroke-width: 2;
-    background-image: url(../img/heart.svg);
+    fill: none;
+    &:hover{
+        stroke: $price-discount; 
+    }
+    // background-image: url(../img/heart.svg);
     &--active{
         stroke: $price-discount;
+        fill: $price-discount;
     } 
 }
 
