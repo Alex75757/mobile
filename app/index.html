@@ -6,11 +6,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test Pride</title>
   <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+  
+  />
 </head>
 <body>
-  <section class="container">
   
-  </section>
+  <div class="container">
+    <div class="logo-wrap">
+      <div class="logo">
+        <!-- <img class="logo__vector33" src="./img/Vector33.svg" alt="logo 33"> -->
+        <!-- <img class="logo__vector34" src="./img/Vector34.svg" alt="logo 34"> -->
+          <div class="logo__vector33"></div>
+          <div class="logo__vector34"></div>
+      </div>
+    </div>
+    <section class="video">
+      <div class="video__group2 group2"></div>
+      <a class="video__frame frame"
+            href='https://www.youtube.com/watch?v=4hgJJmPpXD4'
+            data-fancybox
+            data-type="iframe"
+            data-preload="false"
+            data-width="340"
+            data-height="240"
+      >
+      </a> 
+      <div class="video__ellipse70 ellipse70"></div>
+      <div class="video__rectangle182 rectangle182" ></div>
+      <div class="video__rectangle181 rectangle181" >
+        <img src="./img/Rectangle181.png" alt="rect181">
+      </div>
+      <img class="video__ellipse60 ellipse60 " src="./img/Ellipse60.svg" alt="ellipse60">
+    </section>
+    <div class="seo">
+      <p class="seo__title">
+       <mark> Фото  на </mark><br> праздник
+      </p>
+      <p class="seo__text">
+        Lorem ipsum dolor sit amet, consectetur <mark> adipiscing elit </mark></mark>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    <section class="advantages">
+      <div class="advantages__container">
+        <div class="box">
+          <img class="box__frame" src="./img/advantages/Vector1.svg" alt="advantage1" fill="blue"></img>
+          <p class="box__text">
+          Безлимитная <br>печать фото
+          </p>
+        </div>  
+        <div class="box">
+          <div class="box__frame">
+            <img class="box__frame--multi-1" src="./img/advantages/Vector2.svg" alt="2_1p"></img>
+            <img class="box__frame--multi-2" src="./img/advantages/Rectangle2.svg" alt="2_2p"></img>
+            <img class="box__frame--multi-3" src="./img/advantages/Subtract2.svg" alt="2_3p"></img>
+         
+          </div>
+          <p class="box__text">
+            Фотореквизит <br> в наличии
+          </p>
+        </div>  
+        <div class="box">
+          <img class="box__frame" src="./img/advantages/Vector3.svg" alt="3p"></img>
+          <p class="box__text">
+            Фотоотчет в <br> электронном виде
+          </p>
+        </div> 
+        <div class="box">
+          <img class="box__frame" src="./img/advantages/Vector4.svg" alt="4p"></img>
+          <p class="box__text">
+            Цены <br> ниже рынка
+          </p>
+        </div>  
+      </div>
+    </section>
+
+  </div>
   <script src="./js/main.min.js"></script>
+  <script type="module">
+    /* Fancybox*/
+    import { Fancybox } from "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.esm.js";
+  </script>
 </body>
 </html>

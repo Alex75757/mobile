@@ -4,9 +4,11 @@ $cart-backgroud: #525252;
 $main-font-family: 'Roboto', sans-serif;
 
 
-@media (max-width:375px){
+// @media (max-width:375px){
 
 .container{
+    margin: 0;
+    padding: 0;
     width: 375px;
     height: 100vh;
 }    
@@ -14,11 +16,201 @@ $main-font-family: 'Roboto', sans-serif;
 .logo{
     height: 60px;
     width: 63px;
-    left: 12px;
-    top: 10px;
-    border-radius: 1px;
+    position: relative;
+    &__vector33{
+        position: absolute;
+        width: 55.16px;
+        height: 60px;
+        left: 4px;
+        background-image: url(../img/Vector33.svg);
+        background-repeat: no-repeat;
+    }
+    &__vector34{
+        position: absolute;
+        display: block;
+        width: 63px;
+        height: 40.37px;
+        // left: 12px;
+        top: 13.01px;
+
+        background-image: url(../img/Vector34.svg);
+        background-repeat: no-repeat;
+    }
 
 }
 
+.logo-wrap{
+    // height: 60px;
+    // width: 63px;
+    margin-left: 12px;
+    margin-top: 10px;
+   
 
 }
+
+.video{
+    width: 343px;
+    // height: 253px;
+    margin-left: 9px;
+    margin-top: 30px;
+    position: relative;
+    &__frame{
+        z-index: 20;
+        margin: 103px 0 0 167px;
+        
+    }
+    &__ellipse70{
+        z-index: 17;
+        margin-left: 136px;
+        margin-top: 76px;
+    }
+    &__rectangle182{
+        z-index: 15;
+        margin: 11px 0 0 7px;
+    }
+    &__rectangle181{
+        z-index: 13;
+        margin: 17px 0 0 13px;
+    }
+    &__ellipse60{
+        margin-left: -15px;
+        margin-top: 100px;
+        z-index: 10;
+        // box-shadow: 0px 4px 30px rgba(238, 61, 72, 0.5);
+        // width: 125px;
+        // height: 125px;
+    }
+    &__group2{
+        width: 82px;
+        height: 43.87px;
+        margin-left: 261px;
+        margin-top: 1px;
+    }
+
+}
+.frame{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    // margin-left: 13px;
+    // margin-top: 8px;
+    background-image: url(../img/Vector35.svg);
+    background-repeat: no-repeat;
+}
+.ellipse70{
+    
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+.rectangle182{
+    position: absolute;
+    width: 328.01px;
+    height: 200.54px;
+    border: 3px solid #EE3D48;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.rectangle181{
+    position: absolute;
+    width: 315.4px;
+    height: 188.01px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(image.png);
+    border-radius: 8px;
+}
+.group2{
+    position: absolute;
+    background-image: url(../img/Ellipse52.svg);
+    background-repeat: space;
+}
+.seo{
+    width: 328px;
+    margin-left: 16px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    &__title{
+        font-family: "Roboto Slab", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 53px;
+    }
+    &__text{
+        height: 95px;
+        font-family: "Work Sans";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: #131313;
+    }
+    mark {
+        color: #EE3D48;
+        background: transparent;
+    }
+}
+.advantages{
+    width: 328px;
+    height: 198px;
+    margin-bottom: 80px;
+    margin-left: 16px;
+    &__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 1em;
+    }  
+
+}
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__frame{
+        width: 48px;
+        height: 48px;
+        flex: none;
+        flex-grow: 0;
+        position: relative;
+        
+         &--multi-1{
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 9.38%;
+            bottom: 43.75%;
+            
+        }
+        &--multi-2{
+            position: absolute;
+            left: 0%;
+            right: 93.75%;
+            top: 20.31%;
+            bottom: 9.38%;
+        }
+        &--multi-3{
+            position: absolute;
+            left: 9.37%;
+            right: 9.38%;
+            top: 65.62%;
+            bottom: 15.62%;
+        }
+    }
+    &__text{
+        display: block;
+        font-family: "Work Sans";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+    }
+}
+
+
+// }
