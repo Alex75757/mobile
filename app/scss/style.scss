@@ -3,189 +3,22 @@ $price-discount: #FF0D55;
 $cart-backgroud: #525252;
 $main-font-family: 'Roboto', sans-serif;
 
-.additional-perchase{
-    position: relative;
-    width: 1440px;
-    height: 612px;
-    background: $base-color;
-    margin-left: 80px;
-    margin-top: 72px;
-    margin-bottom: 24px;
 
-    &__caption{
-        font-family: $main-font-family;
+@media (max-width:375px){
 
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 28px;
-        color: #3D3D3D;
-    }
+.container{
+    width: 375px;
+    height: 100vh;
+}    
+
+.logo{
+    height: 60px;
+    width: 63px;
+    left: 12px;
+    top: 10px;
+    border-radius: 1px;
+
 }
 
-.card-container{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    width: 1280px;
-    height: 416px;
-    background-color: $base-color;
-    position: relative;
-}
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    padding: 0px;
-    margin-right: 20px;
-    position: relative;
 
-     &__img{
-        height: 200px;
-        align-items: center;
-        object-fit: none;
-        align-self: center;
-    }
-    &__price{
-        
-        height: 24px;
-        font-family: $main-font-family;
-
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-    }
-    &__price--active{
-        display: block;
-        width: 65px;
-        color: #141414;
-        text-align: left;
-    }
-    &__price--old{
-        position: relative;
-        width: 60px;
-        font-size: 16px;
-        line-height: 20px;
-        color: #8F8F8F;
-    }
-    &__old-price-line{
-        position: absolute;
-        width: 40px;
-        left: 1px;
-        top: 4.5px;
-   
-    }
-    &__price--discount{
-        color: $price-discount;
-    }
-    &__description{
-        width: 305px;
-        height: 60px;
-        font-family: $main-font-family;
-
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 20px;
-        color: #525252;
-    }
-    &__description:hover{
-        color: #4A6EED;
-        ;
-    }
-}
-.btn{
-    width: 156px;
-    height: 44px;
-    background: #1A45DB;
-    border-radius: 3px;
-    align-self: center;
-    font-family: $main-font-family;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.1px;
-    color: #FFFFFF;
-    &--active{
-        background: #082ba8;
-    }
-    
-}
-.cart{
-    width: 156px;
-    height: 44px;
-    background-color: $base-color;
-    display: none;
-    align-self: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    &__active{
-        display: inline;
-    }
-    &__minus{
-        object-fit: none;
-        width: 44px;
-        height: 44px;
-        background: #F8F8F8;
-        border-radius: 3px;  
-    }
-    &__text{
-        width: 44px;
-        text-align: center;
-        height: 20px;
-        font-family: $main-font-family;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 20px;
-        color: $cart-backgroud;
-    }
-    &__plus{
-        object-fit: none;
-        width: 44px;
-        height: 44px;
-        background: #F8F8F8;
-        border-radius: 3px;  
-    }
-}
-
-.heart{
-    position: absolute;
-    right: 4.17%;
-    top: 0.0%;
-    stroke:#525252 ;
-    stroke-width: 2;
-    fill: none;
-    &:hover{
-        stroke: $price-discount; 
-    }
-    // background-image: url(../img/heart.svg);
-    &--active{
-        stroke: $price-discount;
-        fill: $price-discount;
-    } 
-}
-
-@media (max-width:760px){
-    .card-container{
-        flex-wrap: wrap;
-        max-width: 780px;
-    }
-}
-
-@media (max-width:350px){
-    .card-container{
-        flex-wrap: wrap;
-        max-width: 350px;
-    }
 }
