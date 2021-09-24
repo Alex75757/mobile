@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alef</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/imask"></script>
+</head>
+
+<body>
+
+<div class="mobile_order">
+    <div class="mobile_order__caption">
+        <p class="caption__title">
+          Ваша заявка
+        </p>
+        <a class="caption__btn-close" href="/" onclick="clearStor()">
+          <img class="close" src="./img/Close.svg" alt="">
+        </a>
+    </div>
+    <div class="mobile_order__table" id="mobile_order"> 
+        
+        <div class="table-row-item">
+            <div class="table-row-item__caption">
+              <p class="">Фотобудка с ширмой</p>
+              <p class="bg-card__size">Размер: <mark> 2м x 1.5м x 2 м </mark></p>
+              
+            </div>
+            <div class="table-row-item__caption-price">
+            </div>
+        </div>
+        <div class="table-row-item">
+            <div class="">
+              <select class="mobile_dropdown mobile_dropdown--short-days" id="select" onchange="count()">
+                <option value="1" :selected>1 день</option>
+                <option value="2">2 дня</option>
+                <option value="3">3 дня</option>
+                <option value="4">4 дня</option>
+                <option value="5">неделя</option>
+              </select>
+            </div>
+        </div>
+        <div id="add_options">
+        </div>
+        <div class="table-row-result">
+            <div class="table-row-result__title">
+              Итого:
+            </div>
+            <div class="table-row-result__price">
+             500 ₽
+            </div>
+        </div>
+        <div class="mobile_order__form">
+           <input id="phone-mask" class="phone" type="phone" placeholder="+7 (000) 000 00 00">
+            <select class="mobile_dropdown">
+              <option class="mobile_dropdown__item" value="">Позвоните мне</option>
+              <option class="mobile_dropdown__item" value="">Позвоните ему</option>
+            </select>
+        </div>
+        <div class="result">
+            <a href="/" onclick="clearStor()">
+            <button class="result__btn result__btn--big" type="submit">Отправить заявку
+              
+            </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+  <script>
+  let more_price_summ = null;  
+  let final_price = null;
+  let start_price = null;
+  start_price = parseInt(localStorage.getItem('bg_card').replace(/\s/g,''));  
+  document.getElementById('mobile_order').querySelector('.table-row-item__caption-price').textContent = localStorage.getItem('bg_card');
+
+  let j = localStorage.getItem('additional_price_length');
+  if (j) {
+    for (i = j; i >= 1; i--) {
+      more_price_summ = more_price_summ + parseInt(localStorage.getItem(`additional_option_${i}_price`).replace(/\s/g,''));
+      let price = Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', currencyDisplay: 'symbol', minimumFractionDigits: '0' }).format(localStorage.getItem(`additional_option_${i}_price`));
+      document.getElementById('add_options').insertAdjacentHTML('afterBegin', `<div class="table-row-item-new">`);
+      document.getElementById('add_options').querySelector('.table-row-item-new').insertAdjacentHTML('afterBegin', `<div class="table-row-item__price">${price}</div>`); 
+      document.getElementById('add_options').querySelector('.table-row-item-new').insertAdjacentHTML('afterBegin', `<div class="table-row-item__caption">${localStorage.getItem(`additional_option_${i}_caption`)}</div>`); 
+     }
+  }
+  count();
+
+function count(){
+  final_price = more_price_summ + start_price*select.value;
+  document.getElementById('mobile_order').querySelector('.table-row-result__price').textContent = Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', currencyDisplay: 'symbol', minimumFractionDigits: '0' }).format(final_price);
+
+}
+
+function clearStor(){
+ localStorage.clear(); 
+}   
+
+var phoneMask = IMask(
+  document.getElementById('phone-mask'), {
+    mask: '+{7}(000)000-00-00'
+  });
+
+  
+
+</script>
+</body>
+
+</html>

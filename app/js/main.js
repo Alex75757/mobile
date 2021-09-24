@@ -95,17 +95,27 @@ function mobileOrder (idname) {
   	cards.forEach(card => {
 		  
   /* Вызываем функцию прорисовки слайдеров карточек, которая реализована ниже: */
-  for (let k = 1; k<=cards.length; k++) {
+  for (let k = 1; k<=5; k++) {
 	showSlides(slideIndex, card.parentElement.parentNode.id);
   }
 
-  addEventListener('click', (event) =>{
+  document.getElementById(card.parentElement.parentNode.id).addEventListener('click', (event) =>{
 	console.log("card ",card.parentElement.parentNode.id);
-	console.log("event ",event.path[0].id);
+	console.log("event ",event.path[2]);
+
+	let findMe = event.path[2].querySelectorAll('.slider-wrap');
+	   for (let i = 0; i < findMe.length; i++) {
+		   if (findMe[i].attributes[1].value == "display: flex;"){
+			slideIndex =  i+1;
+			console.log(slideIndex);
+		   }
+	   }
+	   
+
 	if (event.path[1].className == "previous") {
 		previousSlide(event.path[3].id)
-	}else { 
-		nextSlide(event.path[3].id)
+	}else if (event.path[1].className == "next") { 
+		nextSlide(event.path)
 	}
 	if (event.path[0].id.match('dot')) {
 		switch (event.path[0].id) {
@@ -135,7 +145,9 @@ function mobileOrder (idname) {
   
   /* Увеличиваем индекс на 1 — показываем следующий слайд: */
   function nextSlide(name) {
-	  showSlides((slideIndex += 1), name);
+	
+	
+	  showSlides((slideIndex += 1), name[3].id);
   }
   
   /* Уменьшаем индекс на 1 — показываем предыдущий слайд: */

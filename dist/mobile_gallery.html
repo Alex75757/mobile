@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alef</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+ 
+</head>
+
+<body>
+
+  <div class="mobile_order">
+      <div class="mobile_order__caption">
+        
+        <a class="mobile_order__btn-close gallery__btn-close" href="/">
+          <img class="close" src="./img/Close.svg" alt="">
+        </a>
+      </div>
+      <div id="slider1" class="m-slider">
+        <div class="slider-item">
+          <img src="./img/slider/photo1.png" loading="lazy" alt="1">
+        </div>
+        <div class="slider-item">
+          <img src="./img/slider/photo2.png" loading="lazy" alt="2">
+        </div>
+        <div class="slider-item">
+          <img src="./img/slider/photo3.png" loading="lazy" alt="3">
+        </div>
+        <div class="slider-item">
+          <img src="./img/slider/photo4.png" loading="lazy" alt="4">
+        </div>
+        <div class="slider-item">
+          <img src="./img/slider/photo5.png" loading="lazy" alt="5">
+        </div>
+        <a class="m-previous" onclick="previousSlide('slider1')">
+          <img src="./img/previous.svg" loading="lazy" alt="pr"></a>
+        <a class="m-next" onclick="nextSlide('slider1')">
+          <img src="./img/previous.svg" fill="black" loading="lazy" alt="nx"></a>
+         <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1,'slider1')"></span>
+            <span class="dot" onclick="currentSlide(2,'slider1')"></span>
+            <span class="dot" onclick="currentSlide(3,'slider1')"></span>
+            <span class="dot" onclick="currentSlide(4,'slider1')"></span>
+            <span class="dot" onclick="currentSlide(5,'slider1')"></span>
+        </div>
+        </div>
+
+      <div class="gallery-group">
+        <div class="gallery-group__caption">
+          <p class="gallery-group__subtitle">Фотобудка</p>
+          <p class="gallery-group__date">20 Марта 2021</p>
+        </div>
+        <p class="gallery-group__title">Название события</p>
+        <p class="gallery-group__text">Lorem ipsum dolor sit amet, consectetur <mark> adipiscing elit</mark>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+  </div>
+
+<script>
+
+/* Устанавливаем стартовый индекс слайда по умолчанию: */
+let slideIndex = 1;
+
+/* Вызываем функцию прорисовки слайдеров карточек, которая реализована ниже: */
+for (let k = 1; k< 2; k++) {
+  showSlides(slideIndex, `slider${k}`);
+}
+
+/* Увеличиваем индекс на 1 — показываем следующий слайд: */
+function nextSlide(name) {
+    showSlides((slideIndex += 1), name);
+}
+
+/* Уменьшаем индекс на 1 — показываем предыдущий слайд: */
+function previousSlide(name) {
+    showSlides((slideIndex -= 1), name);  
+}
+
+/* Устанавливаем текущий слайд: */
+function currentSlide(n, name) {
+    showSlides((slideIndex = n), name);
+}
+
+/* Функция перелистывания: */
+function showSlides(n, nameid) {
+    /* Обращаемся к элементам с названием класса */
+        let slides = document.getElementById(nameid).getElementsByClassName("slider-item");
+        let dots = document.getElementById(nameid).getElementsByClassName("dot");
+    /* Проверяем количество слайдов: */
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    /* Проходим по каждому слайду в цикле for: */
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    /* Делаем элемент блочным (отрисовываем только эту картинку): */
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+}
+
+
+</script>
+</body>
+
+</html>
