@@ -14,26 +14,27 @@
 
 <body>
 
-  <div class="mobile_order">
-      <div class="mobile_order__caption">
-        <p class="mobile_order__title">
+<div class="mobile_order">
+    <div class="mobile_order__caption">
+        <p class="caption__title">
           Ваша заявка
         </p>
-        <a class="mobile_order__btn-close" href="/" onclick="clearStor()">
+        <a class="caption__btn-close" href="/" onclick="clearStor()">
           <img class="close" src="./img/Close.svg" alt="">
         </a>
-      </div>
-      <div class="mobile_order__table" id="mobile_order"> 
-        <div class="bg-card">
-          <div class="table-row-item">
+    </div>
+    <div class="mobile_order__table" id="mobile_order"> 
+        
+        <div class="table-row-item">
             <div class="table-row-item__caption">
               <p class="">Фотобудка с ширмой</p>
               <p class="bg-card__size">Размер: <mark> 2м x 1.5м x 2 м </mark></p>
               
             </div>
-            <div class="table-row-item__caption-price"></div>
-         </div>
-         <div class="table-row-item">
+            <div class="table-row-item__caption-price">
+            </div>
+        </div>
+        <div class="table-row-item">
             <div class="">
               <select class="mobile_dropdown mobile_dropdown--short-days" id="select" onchange="count()">
                 <option value="1" :selected>1 день</option>
@@ -43,39 +44,33 @@
                 <option value="5">неделя</option>
               </select>
             </div>
-         </div>
-         <div id="add_options">
-         </div>
-         <div class="table-row-result">
+        </div>
+        <div id="add_options">
+        </div>
+        <div class="table-row-result">
             <div class="table-row-result__title">
               Итого:
             </div>
             <div class="table-row-result__price">
              500 ₽
             </div>
-          </div>
-         <div class="mobile_order__form">
+        </div>
+        <div class="mobile_order__form">
            <input id="phone-mask" class="phone" type="phone" placeholder="+7 (000) 000 00 00">
             <select class="mobile_dropdown">
               <option class="mobile_dropdown__item" value="">Позвоните мне</option>
               <option class="mobile_dropdown__item" value="">Позвоните ему</option>
             </select>
-          </div>
-          <div class="result">
+        </div>
+        <div class="result">
             <a href="/" onclick="clearStor()">
             <button class="result__btn result__btn--big" type="submit">Отправить заявку
               
             </button>
             </a>
-          </div>
-                 
-            
-        </div> 
-      </div>
-      
+        </div>
     </div>
-   </div>
-  </div>
+</div>
 
   <script>
   let more_price_summ = null;  

@@ -1,3 +1,28 @@
+function showMustGoOn() {
+	let show_news = document.querySelector('.events-list--hidden');
+	if (show_news) {
+	  show_news.classList.remove('events-list--hidden');
+	  if(!document.querySelector('.events-list--hidden')) {
+	  document.querySelector('.show-button').style.display = 'none';
+	  }
+	}  
+  }
+  
+  const questions = document.querySelectorAll('.question');
+  for (let question of questions) {
+	question.addEventListener('click', (event) => {
+	  if ( !question.classList.contains('question--active')){
+		question.classList.add('question--active');
+		question.lastElementChild.classList.add('question__open-box--active');
+		question.nextElementSibling.firstElementChild.style.display = 'block';
+	  } else {
+		question.classList.remove('question--active');
+		question.nextElementSibling.firstElementChild.style.display = 'none';
+		question.lastElementChild.classList.remove('question__open-box--active');  
+	  }  
+	})
+  }  
+
 /* сортировка карточек фотобудок по возрастанию/убыванию итоговой цены*/
 const selectElement = document.querySelector('.msort__list');
 selectElement.addEventListener('click', (event) => {
@@ -62,12 +87,14 @@ function mobileOrder (idname) {
   /* Slider part
   Устанавливаем стартовый индекс слайда по умолчанию: */
   let slideIndex = 1;
-  
+  let cards = document.querySelectorAll('.result__price');
+
   /* Вызываем функцию прорисовки слайдеров карточек, которая реализована ниже: */
-  for (let k = 1; k< 6; k++) {
+  for (let k = 1; k<=cards.length; k++) {
 	showSlides(slideIndex, `slider${k}`);
   }
-  for (let k = 1; k< 6; k++) {
+  /* запоминаем итог цену каждой карточки */
+  for (let k = 1; k<=cards.length; k++) {
 	localStorage.setItem(`card${k}`, document.getElementById(`card${k}`).querySelector('.result__price').textContent);
   }
   

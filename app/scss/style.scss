@@ -629,19 +629,22 @@ width: 24px;
 
 .mobile_order{
     width: 360px;
+    // height: 568px;
     margin-left: 16px;
     background: #FFFFFF;
+    // background: #E5E5E5;
     &__table{
+        // background: #FFFFFF;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0px;
-        width: 328px;
-        height: 280px;
+        // padding: 0px;
+        // width: 328px;
+        // height: 280px;
     }
     &__form{
         width: 328px;
-        height: 92px;
+        // height: 92px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -656,27 +659,33 @@ width: 24px;
         justify-content: space-between;
         align-items:center;
         margin-top: 16px;
+        margin-bottom: 20px;
         width: 328px;
+        // background-color: #FFF;
+
     }
+}
+.caption{
+   background-color: #FFF;
     &__title{
+        display: block;
         font-family: "Roboto Slab";
         font-style: normal;
         font-weight: bold;
         font-size: 32px;
         line-height: 42px;
         color: #131313; 
-    }  
+    }     
     &__btn-close{
         width: 32px;
         height: 32px;
         margin-top: 16px;  
     }
-} 
-
+}
 .phone{
     width: 156px;
     border: none;
-    font-family: Work Sans;
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -695,7 +704,7 @@ width: 24px;
 .table-row-item, .table-row-item-new {
     width: 288px;
     height: 50px;
-    font-family: Work Sans;
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -747,7 +756,7 @@ width: 24px;
     height: 32px;
     background: #F5F5F5;
     border-radius: 6px;
-    font-family: Work Sans;
+    font-family: "Work Sans";
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -776,6 +785,95 @@ width: 24px;
     }
   }
 
+.faq{
+  margin-top: 60px;
+  width: 328px;
+  &__title{
+      font-family: "Roboto Slab";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 42px;
+      margin-bottom: 20px;
+  } 
+  &__subtitle{
+      font-family: Work Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #EE3D48;
+      margin-top: 1px; //?? strange
+  }
+}
+.faq-container{
+  width: 328px;
+  // height: 468px;
+  margin-bottom: 60px;
+ }
+.question{
+  width: 328px;
+  height: 48px;   
+  background: #FAFAFA;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  &--active{
+      font-family: Work Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #FFFFFF; 
+      background: #EE3D48;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+  }
+  &__title{
+      font-family: Work Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px; 
+  }
+
+  &__open-box{
+      width: 16px;
+      height: 9px;
+      margin-top: 2px;
+      background-image: url(../img/Down.svg);
+      background-repeat: no-repeat;
+      left: 20.83%;
+      right: 20.74%;
+      top: 37.49%;
+      bottom: 33.32%;
+      }
+  &__open-box--active{
+      background-image: url(../img/Up.svg);
+      transform: matrix(1, 0, 0, -1, 0, 0);
+      }      
+}
+   
+.answer{
+  &__text{
+      display: none;
+      font-family: Work Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #6A6A6A;
+      padding-left: 9px;
+      }
+  &--active{
+      display: block;
+  }    
+}
 
 
 // }
