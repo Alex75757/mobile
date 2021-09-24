@@ -1,67 +1,122 @@
+/* сортировка карточек фотобудок по возрастанию/убыванию итоговой цены*/
+const selectElement = document.querySelector('.msort__list');
+selectElement.addEventListener('click', (event) => {
+  let priceArr = document.getElementsByClassName('bg-card');
+  let Arr = []
+  if (event.target.value == 'up') {
+     Arr = Array.from(priceArr).sort((a,b) => a.children[6].firstElementChild.innerText 
+          > b.children[6].firstElementChild.innerText ? 1: -1)
+          console.log(Arr)
+  } 
+  if (event.target.value == 'down') {
+    Arr = Array.from(priceArr).sort((a,b) => a.children[6].firstElementChild.innerText
+          < b.children[6].firstElementChild.innerText ? 1: -1)
+  }
 
-let elementChecked = document.querySelectorAll('.heart');
+  for (let i = 0; i < Arr.length; i++){
+         document.getElementById('msort').append(Arr[i])
+        }
+})
+
+/* Добавление стоимости дополнительных опций в стоимость фотобудки*/
+let elementChecked = document.querySelectorAll('.checkbox-other');
 for (let element of elementChecked) {
   element.addEventListener('click', () => {
-	element.classList.toggle('heart--active') 
-	});
-}
+    if (element.lastElementChild.checked) {
+      let add_price = element.parentElement.previousElementSibling;
+      let rez = (add_price.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstElementChild.textContent.replace(/\s/g,''))
+      rez = parseInt(rez) + parseInt(add_price.lastElementChild.textContent.replace(/от /g,'').replace(/\s/g,''));
+      add_price.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstElementChild.textContent = 
+      Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', currencyDisplay: 'symbol', minimumFractionDigits: '0' }).format(rez);
+    } else {
+      let add_price = element.parentElement.previousElementSibling;
+      let rez = (add_price.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstElementChild.textContent.replace(/\s/g,''))
+      rez = parseInt(rez) - parseInt(add_price.lastElementChild.textContent.replace(/от/g,'').replace(/\s/g,''));
+      add_price.parentElement.parentElement.nextSibling.nextSibling.nextSibling.nextSibling.firstElementChild.textContent = 
+      Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', currencyDisplay: 'symbol', minimumFractionDigits: '0' }).format(rez);
+    }
+  })
+}  
 
-let btnChecked = document.querySelectorAll('.btn');
-for (let element of btnChecked) {
-	element.addEventListener('mouseover', () => {
-		element.classList.add('btn--active');
-	});
-	element.addEventListener('mouseleave', () => {
-		element.classList.remove('btn--active');
-	});
-	element.addEventListener('click', () => {
-		// element.style.background="#06174e";
-		
-		setTimeout(() => {
-			element.style.display="none";
-			element.nextElementSibling.style.display="flex";
-		}, 250);
+// расчет заказа для отдельной страницы
+function mobileOrder (idname) {
+	let id = document.getElementById(idname);
+	let priceResult = id.querySelector('.result__price').textContent.replace(/\s/g,'');
+	priceResult = Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', currencyDisplay: 'symbol', minimumFractionDigits: '0' }).format(parseInt(priceResult));
+	localStorage.setItem('price_card', priceResult);
+	let bg_card_price = localStorage.getItem(idname);
+	localStorage.setItem('bg_card', bg_card_price);
+	additional_items= id.querySelectorAll('.checkbox-other');
+	let j = null;
+	for (let i = 0; i< additional_items.length; i++) {
+	  if (additional_items[i].lastElementChild.checked) {
+		j++;
+		localStorage.setItem(`additional_option_${j}_price`, parseInt(additional_items[i].parentElement.previousElementSibling.lastElementChild.textContent.replace(/от/g,'').replace(/\s/g,'')));
+		localStorage.setItem(`additional_option_${j}_caption`, additional_items[i].parentElement.previousElementSibling.firstElementChild.textContent);
+	  }
+	}  
+	if (j) localStorage.setItem('additional_price_length', j);
+  }
 
-		
-	});
-}
 
-let minusChecked = document.querySelectorAll('.cart__minus');
-for (let element of minusChecked) {
-	element.addEventListener('click', () => {
-		let test = parseInt(element.nextElementSibling.innerHTML.replace('шт',''));
-		if (test == 1){
-			element.closest('.cart').style.display="none";
-			let el = element.parentNode.previousElementSibling;
-			el.style.display="block";
-			// el.style.background="red";
-			el.addEventListener('mouseover', () => {
-				el.classList.add('btn--active');
-			});
-			el.addEventListener('mouseleave', () => {
-				el.classList.remove('btn--active');
-			});
-			// element.addEventListener('mouseover', () => {
-			// 	element.parentNode.previousElementSibling.style.background = "#1A45DB";
-			// })	
-			// element.addEventListener('mouseout', () => {
-			// 	element.parentNode.previousElementSibling.style.background = "#1A45DB";
-			// })
-		} else {
-			test -=1;
-			element.nextElementSibling.innerHTML = test + " шт";
-		}
-	})
-		
+  /* Slider part
+  Устанавливаем стартовый индекс слайда по умолчанию: */
+  let slideIndex = 1;
+  
+  /* Вызываем функцию прорисовки слайдеров карточек, которая реализована ниже: */
+  for (let k = 1; k< 6; k++) {
+	showSlides(slideIndex, `slider${k}`);
+  }
+  for (let k = 1; k< 6; k++) {
+	localStorage.setItem(`card${k}`, document.getElementById(`card${k}`).querySelector('.result__price').textContent);
+  }
+  
+  /* Увеличиваем индекс на 1 — показываем следующий слайд: */
+  function nextSlide(name) {
+	  showSlides((slideIndex += 1), name);
+  }
+  
+  /* Уменьшаем индекс на 1 — показываем предыдущий слайд: */
+  function previousSlide(name) {
+	  showSlides((slideIndex -= 1), name);  
+  }
+  
+  /* Устанавливаем текущий слайд: */
+  function currentSlide(n, name) {
+	  showSlides((slideIndex = n), name);
+  }
+  
+  /* Функция перелистывания: */
+  function showSlides(n, nameid) {
+	  /* Обращаемся к элементам с названием класса */
+		  let slides = document.getElementById(nameid).getElementsByClassName("slider-wrap");
+		  let dots = document.getElementById(nameid).getElementsByClassName("dot");
+	  /* Проверяем количество слайдов: */
+	  if (n > slides.length) {
+		slideIndex = 1
+	  }
+	  if (n < 1) {
+		  slideIndex = slides.length
+	  }
+	  /* Проходим по каждому слайду в цикле for: */
+	  for (let slide of slides) {
+		  slide.style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		  dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  
+	  /* Делаем элемент блочным (отрисовываем только эту группу картинок): */
+	  slides[slideIndex - 1].style.display = "flex";
+	  
+	  dots[slideIndex-1].className += " active";
 
-}
+  }
+  
+ 
+  
+  
 
-let plusChecked = document.querySelectorAll('.cart__plus');
-for (let element of plusChecked) {
-	element.addEventListener('click', () => {
-		let test = parseInt(element.previousElementSibling.innerHTML.replace('шт',''));
-			test +=1;
-			element.previousElementSibling.innerHTML = test + " шт";
-		
-	})
-}
+
+
+

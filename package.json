@@ -1,8 +1,8 @@
 {
-  "name": "interactive-quiz",
+  "name": "photo",
   "version": "1.0.0",
-  "description": "js interactive quiz",
-  "main": "index.js",
+  "description": "test",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
