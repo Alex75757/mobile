@@ -28,6 +28,9 @@ dd {
   padding: 0;
   font-size: inherit;
 }
+a{
+    text-decoration: none;
+  }
 
 // @media (max-width:375px){
 
@@ -788,6 +791,7 @@ width: 24px;
 .faq{
   margin-top: 60px;
   width: 328px;
+  margin-left: 16px;
   &__title{
       font-family: "Roboto Slab";
       font-style: normal;
@@ -810,6 +814,7 @@ width: 24px;
   width: 328px;
   // height: 468px;
   margin-bottom: 60px;
+ 
  }
 .question{
   width: 328px;
@@ -875,5 +880,300 @@ width: 24px;
   }    
 }
 
+.events{
+    width: 328px;
+    margin-left: 16px;
+    // background: #FFF;
+    &__title{
+        font-family: Roboto Slab;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    } 
+    &__subtitle{
+        font-family: Work Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #EE3D48;
+        margin-top: 1px;
+    }
+}
+.events-container{
+    width: 328px;
+}
+.events-list{
+    width: 328px;
+    
+}
+.events-list--hidden{
+    display: none;
+}   
+.event-phone{
+    width: 328px;
+    // height: 479px;
+    background: #FAFAFA;
+    display: block;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    color: #131313;
+    &__title{
+        font-family: Work Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 23px;
+        margin-left: 8px;
+      
+    }
+    &__subtitle{
+        color: #131313;
+        font-family: Work Sans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #EE3D48;
+        margin-left: 8px;
+    }
+    &__photo{
+        position: relative;
+        width: 328px;
+        margin-bottom: 20px;
+        height: 328px;
+        background-image: url(../img/news/photo1.png);
+        object-fit: fill;
+        background-repeat: cover;
+    }
+    &__text, &__date{
+        margin-top: 8px;
+        margin-bottom: 12px;
+        font-family: "Work Sans";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px; 
+        margin-left: 8px;
+    }
+    &__date{
+        color: #6A6A6A;
+    }
+    &__arrow-box{
+       width: 40px;
+       height: 40px;
+       margin-bottom: 1px;
+    }
+       
+}
+.arrow{
+    position: absolute;
+    left: 2.44%;
+    right: 85.37%;
+    margin-top: 298px;
 
+}
+.show-button{
+    margin-top: 30px;
+    width: 328px;
+    height: 40px;
+    left: 16px;
+    border: 1px solid #EE3D48;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #FAFAFA;
+&__text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #EE3D48;
+}
+}
+.contacts{
+width: 328px;
+margin-top: 60px;
+margin-left: 16px;
+&__title{
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 36px;
+}
+&__subtitle{
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #EE3D48;
+}
+&__grid{
+    display: grid;
+    grid-template-areas: 
+    "left1 right1"
+    "left1 right2";
+    grid-template-columns: 44px 1fr;
+    grid-template-rows: 34px;
+    grid-gap: 0.1em;
+}
+}
+.left1{
+margin: 20px 0 10px 0;
+}
+.right1{
+margin: 15px 0 15px 0;
+font-family: Roboto Slab;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 32px;
+
+}
+.right2{
+margin: 10px 0;
+font-family: Work Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+color: #6A6A6A;
+padding-bottom: 20px;
+border-bottom: 1px solid #D5DAE0;;
+} 
+
+.map{
+margin-top: -11px;
+margin-left: -16px;
+width: 360px;
+height: 360px;  
+}
+.m-slider{
+width: 320px;
+height: 320px;  
+max-width: 90%;
+/* Положение элемента устанавливается относительно его исходной позиции: */
+position: relative;
+
+}
+.m-slider .slider-item img {
+/* Элемент меняет размер так, чтобы заполнить блок и сохранить пропорции: */
+object-fit: cover;
+width: 100%;
+height: 222px;
+}
+
+.m-slider .m-previous, .m-slider .m-next {
+/* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+cursor: pointer;
+/* Положение элемента задаётся относительно границ браузера: */
+position: absolute;
+top: 35%;
+width: auto;
+margin: -22px -10px;
+padding: 10px;
+
+/* Оформление самих кнопок: */
+color: rgba(0,0,0, 0.24);
+background-color: rgba(0,0,0, 0.24);
+font-weight: bold;
+font-size: 16px;
+/* Плавное появление фона при наведении курсора: */
+transition: 0.9s ease;
+/* Скругление границ: */
+border-radius: 3px;
+}
+.m-slider .m-next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+.m-next{
+-webkit-transform: scaleX(-1);
+-moz-transform: scaleX(-1);
+-o-transform: scaleX(-1);
+transform: scaleX(-1);
+}
+
+/* Анимация слайдов: */
+.m-slider .slider-item {
+animation-name: fade;
+animation-duration: 1.9s;
+}
+@keyframes fade {
+/* Устанавливаем и изменяем степень прозрачности: */
+from {
+    opacity: 0.4
+}
+to {
+    opacity: 1
+}
+}
+
+.gallery-group{
+width: 296px;
+height: 160px;
+margin-left: 12px;
+&__caption{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+&__title{
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 12px 0;
+}
+&__subtitle{
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #EE3D48;
+}
+&__date{
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #6A6A6A;
+}
+&__text{
+    width: 296px;
+    height: 92px;
+    overflow-y:scroll;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 130%;
+    mark {
+        color: red;
+        text-decoration: underline;
+        background: transparent;
+    }
+}
+}
+.gallery__btn-close{
+position: absolute;
+width: 40px;
+height: 40px;
+left: 307px;
+top: -10px;
+padding-top: 10px;
+padding-left: 1px;
+z-index: 10;
+background: rgba(0, 0, 0, 0.24);
+border-radius: 2px;
+}
 // }
