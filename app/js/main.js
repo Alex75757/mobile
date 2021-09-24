@@ -90,12 +90,44 @@ function mobileOrder (idname) {
   Устанавливаем стартовый индекс слайда по умолчанию: */
   let slideIndex = 1;
   
+  //heart of all this shit ^)
   let cards = document.querySelectorAll('.result__price');
-
+  	cards.forEach(card => {
+		  
   /* Вызываем функцию прорисовки слайдеров карточек, которая реализована ниже: */
   for (let k = 1; k<=cards.length; k++) {
-	showSlides(slideIndex, `slider${k}`);
+	showSlides(slideIndex, card.parentElement.parentNode.id);
   }
+
+  addEventListener('click', (event) =>{
+	console.log("card ",card.parentElement.parentNode.id);
+	console.log("event ",event.path[0].id);
+	if (event.path[1].className == "previous") {
+		previousSlide(event.path[3].id)
+	}else { 
+		nextSlide(event.path[3].id)
+	}
+	if (event.path[0].id.match('dot')) {
+		switch (event.path[0].id) {
+			case 'dot1': slideIndex = 1;
+			break
+			case 'dot2': slideIndex = 2;
+			break
+			case 'dot3': slideIndex = 3;
+			break
+			case 'dot4': slideIndex = 4;
+			break
+			case 'dot5': slideIndex = 5;
+		}
+		showSlides(slideIndex, card.parentElement.parentNode.id);
+	}
+	if (event.path[0].id == 'orderGo') {
+		mobileOrder (event.path[3].id)
+	}
+	
+	});
+
+});
   /* запоминаем итог цену каждой карточки */
   for (let k = 1; k<=cards.length; k++) {
 	localStorage.setItem(`card${k}`, document.getElementById(`card${k}`).querySelector('.result__price').textContent);
@@ -143,7 +175,7 @@ function mobileOrder (idname) {
 
   }
   
- 
+
   
   
 
