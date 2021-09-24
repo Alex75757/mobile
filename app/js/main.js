@@ -1,3 +1,4 @@
+/* открытие 3-х следующих новостей */
 function showMustGoOn() {
 	let show_news = document.querySelector('.events-list--hidden');
 	if (show_news) {
@@ -8,6 +9,7 @@ function showMustGoOn() {
 	}  
   }
   
+//block faq
   const questions = document.querySelectorAll('.question');
   for (let question of questions) {
 	question.addEventListener('click', (event) => {
@@ -87,6 +89,7 @@ function mobileOrder (idname) {
   /* Slider part
   Устанавливаем стартовый индекс слайда по умолчанию: */
   let slideIndex = 1;
+  
   let cards = document.querySelectorAll('.result__price');
 
   /* Вызываем функцию прорисовки слайдеров карточек, которая реализована ниже: */
