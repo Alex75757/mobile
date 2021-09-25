@@ -92,6 +92,7 @@ function mobileOrder (idname) {
   
   //heart of all this shit ^)
   let cards = document.querySelectorAll('.result__price');
+  	console.log(cards)
   	cards.forEach(card => {
 		  
   /* Вызываем функцию прорисовки слайдеров карточек, которая реализована ниже: */
